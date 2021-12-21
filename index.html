@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery.applink/jquery.applink.js"></script>
+</head>
+<body>
+
+    <script>
+
+        $(document).ready(function () {
+            $('a[data-applink]').applink({
+                popup: 'auto', // disable/enable share popup created by plugin. If auto, only will be enabled to popupDomains domains
+                popupDomains: 'twitter|facebook', // If "popup" option is auto, it will check this domains to open a domain or redirect to page
+                desktop: false, // disable/enable native app check for no mobile devices
+                data: 'applink' // load native links from data-XXXXXX attribute,
+                timeout: 1500 // time in ms to detect app before launch HTTP link (only when is mobile and desktop is false)
+            });
+        });
+
+
+    </script>
+    <a href="https://facebook.com/me" data-applink="fb://profile">My Facebook Profile</a>
+</body>
+</html>
+
